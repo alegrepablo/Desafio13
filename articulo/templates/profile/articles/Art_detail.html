@@ -15,22 +15,14 @@
     {% endfor %}
 {% endif %}
 
-
-
-
-
-<div class="text-center">
-
-    <h1>{{article.title}}</h1>
-    <h2 class="my-2 h5 text-muted">{{article.date_published}}</h2>
-  
-    <img src="{{article.image.url}}" alt="{{article.title}}" class="img-fluid">
-  
-  
+<div class="container text-center">
+    <h1>{{ article.title }}</h1>
+    <h5 class="text-dark fs-6 card-title">{{ article.category }}</h5>
+    <h2 class="my-2 h5 text-muted">{{ article.date_published }}</h2>
+    <img src="{{ article.image.url }}" alt="{{ article.title }}" class="img-fluid my-4 w-50">
     <div class="my-4">
-  
-    {{article.content|safe}}
+        {{ article.content|safe }}
     </div>
-  </div>
+</div>
 
 {% endblock %}

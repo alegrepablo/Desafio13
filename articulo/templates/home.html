@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<!-- Porfolio Section -->
+
 <div class="row my-4 text-center">
 
     <h3>Red Salud Popular Carrillo</h3>
@@ -20,9 +20,9 @@
           <p>{{ article.content|striptags |truncatechars:100 }}</p>
 
           <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-            <a href="{% url 'articulos:detail' article.id %}" class="btn btn-success">Seguir Leyendo</a>
-            <a href="{% url 'articulos:update' article.id %}" class="btn btn-warning ms-2">Editar</a>
-            <a href="{% url 'articulos:delete' article.id %}" class="btn btn-danger ms-2">Eliminar</a>
+            <a href="{% url 'articulos:detail_article' article.id %}" class="btn btn-success">Seguir Leyendo</a>
+            <a href="{% url 'articulos:update_article' article.id %}" class="btn btn-warning ms-2">Editar</a>
+            <a href="{% url 'articulos:delete_article' article.id %}" class="btn btn-danger ms-2">Eliminar</a>
           </div>
 
         </div>
