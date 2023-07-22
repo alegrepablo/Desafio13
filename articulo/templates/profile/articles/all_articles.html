@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="text-center">
+    <h1>Todos los Artículos</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for article in articles %}
+        <div class="col">
+            <!-- Agregar un estilo de fondo a la tarjeta -->
+            <div class="card h-100" class="bg-dark">
+                <img src="{{ article.image.url }}" class="card-img-top" alt="{{ article.title }}" style="max-height: 150px; object-fit: cover;">
+                <div class="card-body">
+                    <h6 class="card-subtitle mb-2 text-muted">{{ article.date_published|date:'M d Y' }}</h6>
+                    <h5 class="text-dark" class="card-title" >{{ article.title }}</h5>
+                    <p class="text-dark" class="card-text">{{ article.content|striptags |truncatechars:100  }}</p>
+                        <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                            <a href="{% url 'articulos:detail' article.id %}" class="btn btn-success">Seguir Leyendo</a>
+                            <a href="{% url 'articulos:update' article.id %}" class="btn btn-warning ms-2">Editar</a>
+                            <a href="{% url 'articulos:delete' article.id %}" class="btn btn-danger ms-2">Eliminar</a>
+                        </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+
+
