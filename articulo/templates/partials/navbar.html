@@ -13,31 +13,27 @@
                     <a class="nav-link active" aria-current="page" href="{% url 'articulos:all_articles'%}">Articulos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Categorías</a>
+                    <a class="nav-link active" href="{% url 'articulos:all_category'%}">Categorías</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Acerca de</a>
+                    <a class="nav-link active " href="{% url 'articulos:about'%}">Acerca de</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled">Contacto</a>
+                    <a class="nav-link active" href="{% url 'articulos:contact'%}">Contacto</a>
                 </li>
 
                 <!-- Menú desplegable "Mi Perfil" -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        {% comment %} <img src="{% static 'images/perfil-default.png' %}" alt="Mi Perfil" class="profile-image"> {% endcomment %}
+                    <a class="nav-link active dropdown-toggle" href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="{% static 'images/perfil-default.png' %}" alt="Mi Perfil" class="profile-image">
                         Perfil
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                       <li><a class="dropdown-item" href="#">Ver Perfil</a></li>
-                      <li><a class="dropdown-item" href="{% url 'articulos:create' %}">Publicar Articulos</a></li>
-                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><a class="dropdown-item" href="{% url 'articulos:article_create' %}">Publicar Articulos</a></li>
                     </ul>
                 </li>
-
             </ul>
         </div>
     </div>
 </nav>
-
-  
