@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <h1>Crear Artículo</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar Artículo</button>
+  </form>
+
+  <form method="get" action="{% url 'articulos:create_category' %}">
+    {% csrf_token %}
+    <button type="submit">Crear Categoría</button>
+  </form>
+  
+{% endblock %} 
+
+
+
+

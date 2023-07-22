@@ -1,0 +1,23 @@
+/* main.css */
+:root {
+  --primary: #041b33cc;
+}
+
+.color-body {
+  background-color: var(--primary);
+  color: white;
+}
+
+
+.card-project:hover {
+    border: 1px solid #1c78ad;
+    cursor: pointer;
+  }
+
+  /* Estilo para hacer la imagen de perfil circular */
+.profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}

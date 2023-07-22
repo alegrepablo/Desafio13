@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags == 'success' %}
+            <div class="alert alert-success" role="alert">
+                <h4 class="alert-heading">¡Bien hecho!</h4>
+                <p>{{ message }}</p>
+                <hr>
+                <p class="mb-0">¡Excelente trabajo!</p>
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+
+
+
+
+<div class="text-center">
+
+    <h1>{{article.title}}</h1>
+    <h2 class="my-2 h5 text-muted">{{article.date_published}}</h2>
+  
+    <img src="{{article.image.url}}" alt="{{article.title}}" class="img-fluid">
+  
+  
+    <div class="my-4">
+  
+    {{article.content|safe}}
+    </div>
+  </div>
+
+{% endblock %}
