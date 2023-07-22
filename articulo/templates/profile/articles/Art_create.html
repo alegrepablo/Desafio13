@@ -7,14 +7,13 @@
     {{ form.as_p }}
     <button type="submit">Guardar Artículo</button>
   </form>
-
-  <form method="get" action="{% url 'articulos:create_category' %}">
+  <br>
+  <form method="get" action="{% url 'articulos:create_category' %}" enctype="multipart/form-data">
     {% csrf_token %}
-    <button type="submit">Crear Categoría</button>
+    <button type="submit" class="btn btn-success">Crear Categoría</button>
   </form>
   
 {% endblock %} 
-
 
 
 
